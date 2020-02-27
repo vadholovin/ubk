@@ -1,0 +1,130 @@
+/* 
+---------------------------------------------
+team
+--------------------------------------------- 
+*/
+
+.team-item {
+	background: #fff;
+	box-shadow: 0 2px 48px 0 rgba(0,0,0,0.08);
+	@include radius(5px);
+	position: relative;
+	margin-bottom: 55px;
+
+	&:hover {
+		.user-image {
+			bottom: -55px;
+		}
+
+		.team-content {
+			.team-info {
+				&:before {
+					height: 125px;
+				}
+			}
+
+			.social {
+				li {
+					a {
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+
+	.user-image {
+		width: 96px;
+		height: 96px;
+		border: 6px solid #fff;
+		overflow: hidden;
+		@include radius(100%);
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		margin: auto;
+		bottom: -45px;
+		@include transition(.4s);
+		box-shadow: 0 2px 48px 0 rgba(0,0,0,0.08);
+	}
+
+	.team-content {
+		text-align: center;
+		overflow: hidden;
+
+		.team-info {
+			margin-top: 0px;
+			margin-bottom: 30px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				background-image: linear-gradient(135deg, $gradientDark 0%, $gradientLight 100%);
+				height: 68px;
+				z-index: 1;
+				@include transition(.4s);
+				-webkit-border-top-right-radius: 5px;
+				 -webkit-border-top-left-radius: 5px;
+					 -moz-border-radius-topleft: 5px;
+					-moz-border-radius-topright: 5px;
+						 border-top-left-radius: 5px;
+						border-top-right-radius: 5px;				
+			}
+
+			.user-name {
+				display: block;
+				@include font($normal, 16px);
+				color: #fff;
+				letter-spacing: 0.69px;
+				margin-top: 5px;
+				position: relative;
+				z-index: 2;
+			}
+
+			span {
+				display: block;
+				@include font($normal, 12px);
+				color: $textLight;
+				letter-spacing: 0.6px;
+				position: relative;
+				z-index: 2;
+			}
+		}
+
+		.social {
+			text-align: center;
+			margin-top: 15px;
+			margin-bottom: 15px;
+			position: relative;
+			z-index: 2;
+			@include transition(.3s);
+
+			li {
+				display: inline-block;
+				margin-left: 7px;
+				margin-right: 7px;
+				@include transition(.3s);
+
+				a {
+					color: $primaryColor;
+					@include transition(.3s);
+				}
+			}
+		}
+
+		p {
+			padding-left: 25px;
+			padding-right: 25px;
+			margin-bottom: 60px;
+			@include font($normal, 14px);
+			color: $textDark;
+			letter-spacing: 0.6px;
+			line-height: 26px;
+		}
+	}
+}
